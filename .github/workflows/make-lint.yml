@@ -4,4 +4,10 @@ on: push
 
 jobs:
   build:
-    steps: make lint
+    steps: 
+  - uses: actions/checkout@v2
+    with:
+      node-version: '16.x'
+      cache: npm
+  - run:
+    make lint
