@@ -3,11 +3,17 @@ name: make-lint
 on: push
 
 jobs:
-  build:
-    steps: 
-  - uses: actions/checkout@v2
-    with:
-      node-version: '16.x'
-      cache: npm
-  - run:
-    make lint
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - run: make install
+    - run: make lint
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #   - uses: actions/checkout@v2
+  #       with:
+  #         node-version: '16.x'
+  #         cache: npm
+  #   - run:
+  #     make lint
