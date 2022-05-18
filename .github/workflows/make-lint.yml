@@ -1,0 +1,7 @@
+name: make-lint
+
+on: push
+
+jobs:
+  build:
+    steps: make lint
