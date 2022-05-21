@@ -6,7 +6,7 @@ const evenNumber = (userName) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   while (count < 3) {
-    let number = Math.ceil(Math.random()*100);
+    const number = Math.ceil(Math.random() * 100);
     let rightAnswer = 'yes';
 
     if (number % 2 !== 0) {
@@ -14,10 +14,10 @@ const evenNumber = (userName) => {
     }
 
     console.log(`Question: ${number}`);
-    let answer = readlineSync.question('Your answer: ');
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer === rightAnswer) {
-      console.log(`Correct!`);
+      console.log('Correct!');
       count += 1;
     } else if (answer !== rightAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
@@ -25,9 +25,9 @@ const evenNumber = (userName) => {
       break;
     }
   }
-  
+
   if (count === 3) {
-    console.log(`Congratulations, ${userName}!`)
+    console.log(`Congratulations, ${userName}!`);
   }
 };
 
