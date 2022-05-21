@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
-        uses: actions/checkout@v2.4.2
-        uses: actions/setup-node@v3.2.0
+      - uses: actions/checkout@v2.4.2
+      - uses: actions/setup-node@v3.2.0
         name: 'setup node'
         with:
           node-version: '14'
-          
+
         - run: make install
         - run: make lint
