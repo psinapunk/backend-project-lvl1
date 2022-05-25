@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import evenNumber from '../src/even.js';
-import askName from '../src/cli.js';
+import evenNumber from '../src/games/even.js';
 
-const userName = askName();
-evenNumber(userName);
+evenNumber();
