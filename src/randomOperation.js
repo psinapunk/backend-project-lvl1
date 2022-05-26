@@ -5,7 +5,7 @@ const randomOperand = () => {
 };
 
 const randomOperation = () => {
-  const operation = `${Math.floor(Math.random() * 30)} ${randomOperand()} ${Math.floor(Math.random() * 30)}`;
+  const operation = `${Math.floor(Math.random() * 50)} ${randomOperand()} ${Math.floor(Math.random() * 50)}`;
   return operation;
 };
 
