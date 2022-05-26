@@ -1,37 +1,38 @@
-import askName from '../cli.js';
-import {
-  randomOperation, realCalc,
-} from '../randomOperation.js';
-import {
-  printCondition, askQuestion, takeAnswer, checkAnswer, rigthAnswerCase, wrongAnswerCase,
-} from '../index.js';
+import game from '../index.js';
+
+const randomOperand = () => {
+  const operands = ['+', '-', '*'];
+  const rand = Math.floor(Math.random() * 3);
+  return operands[rand];
+};
 
 const calcGame = () => {
-  let count = 0;
-  const userName = askName();
+  const condition = 'What is the result of the expression?';
+  const generateQuestion = () => {
+    const question = `${Math.floor(Math.random() * 50)} ${randomOperand()} ${Math.floor(Math.random() * 50)}`;
+    return question;
+  };
 
-  printCondition('What is the result of the expression?');
+  const getrightAnswer = (question) => {
+    const [first, operand, second] = question.split(' ');
+    let result;
+    switch (operand) {
+      case '+':
+        result = Number(first) + Number(second);
+        break;
 
-  while (count < 3) {
-    const question = randomOperation();
-    askQuestion(question);
+      case '-':
+        result = Number(first) - Number(second);
+        break;
 
-    const answer = Number(takeAnswer());
-    const rightAnswer = realCalc(question);
-    const result = checkAnswer(answer, rightAnswer);
-
-    if (result) {
-      rigthAnswerCase();
-      count += 1;
-    } else {
-      wrongAnswerCase(userName, answer, rightAnswer);
-      break;
+      default:
+        result = Number(first) * Number(second);
+        break;
     }
+    return String(result);
+  };
 
-    if (count === 3) {
-      console.log(`Congratulations, ${userName}!`);
-    }
-  }
+  game(condition, generateQuestion, getrightAnswer);
 };
 
 export default calcGame;
