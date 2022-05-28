@@ -1,3 +1,6 @@
+import {
+  cons,
+} from '@hexlet/pairs';
 import game from '../index.js';
 
 const randomOperand = () => {
@@ -8,12 +11,10 @@ const randomOperand = () => {
 
 const calcGame = () => {
   const condition = 'What is the result of the expression?';
-  const generateQuestion = () => {
-    const question = `${Math.floor(Math.random() * 50)} ${randomOperand()} ${Math.floor(Math.random() * 50)}`;
-    return question;
-  };
 
-  const getrightAnswer = (question) => {
+  const generateQuestionAndRigthAnswer = () => {
+    const question = `${Math.floor(Math.random() * 50)} ${randomOperand()} ${Math.floor(Math.random() * 50)}`;
+
     const [first, operand, second] = question.split(' ');
     let result;
     switch (operand) {
@@ -29,10 +30,11 @@ const calcGame = () => {
         result = Number(first) * Number(second);
         break;
     }
-    return String(result);
+    const pairQuestionAndRightAnswer = cons(question, String(result));
+    return pairQuestionAndRightAnswer;
   };
 
-  game(condition, generateQuestion, getrightAnswer);
+  game(condition, generateQuestionAndRigthAnswer);
 };
 
 export default calcGame;

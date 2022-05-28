@@ -1,14 +1,18 @@
+import {
+  car, cdr,
+} from '@hexlet/pairs';
 import readlineSync from 'readline-sync';
 import askName from './cli.js';
 
-const game = (condition, generateQuestion, getrightAnswer) => {
+const game = (condition, generateQuestionAndRightAnswer) => {
   const userName = askName();
   console.log(`${condition}`);
   let count = 0;
 
   while (count < 3) {
-    const question = generateQuestion();
-    const rightAnswer = getrightAnswer(question);
+    const pairQuestionAndRightAnswer = generateQuestionAndRightAnswer();
+    const question = car(pairQuestionAndRightAnswer);
+    const rightAnswer = cdr(pairQuestionAndRightAnswer);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
