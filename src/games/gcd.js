@@ -7,10 +7,12 @@ const findGCD = () => {
   const condition = 'Find the greatest common divisor of given numbers.';
 
   const generateQuestionAndRigthAnswer = () => {
-    const pairOfRandomNumbers = cons(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100));
+    const randomNumber1 = Math.floor(Math.random() * 100);
+    const randomNumber2 = Math.floor(Math.random() * 100);
+    const pairOfRandomNumbers = cons(randomNumber1, randomNumber2);
     const question = `${car(pairOfRandomNumbers)} ${cdr(pairOfRandomNumbers)}`;
 
-    const getPair = (first, second) => (first <= second ? cons(second, first) : cons(first, second));
+    const getPair = (first, second) => (first < second ? cons(second, first) : cons(first, second));
 
     let pair = getPair(car(pairOfRandomNumbers), cdr(pairOfRandomNumbers));
     let reminder = car(pair) % cdr(pair);
