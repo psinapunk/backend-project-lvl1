@@ -25,8 +25,7 @@ const findGSD = () => {
       result = cdr(pair);
     }
 
-    const pairQuestionAndRightAnswer = cons(question, String(result));
-    return pairQuestionAndRightAnswer;
+    return cons(question, String(result));
   };
 
   game(condition, generateQuestionAndRigthAnswer);

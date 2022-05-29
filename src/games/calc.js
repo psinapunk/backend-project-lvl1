@@ -30,8 +30,8 @@ const calcGame = () => {
         result = Number(first) * Number(second);
         break;
     }
-    const pairQuestionAndRightAnswer = cons(question, String(result));
-    return pairQuestionAndRightAnswer;
+
+    return cons(question, String(result));
   };
 
   game(condition, generateQuestionAndRigthAnswer);

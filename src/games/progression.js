@@ -27,8 +27,7 @@ const findMissedNumb = () => {
         element += stepOfProgression;
       }
     }
-    const pairQuestionAndRightAnswer = cons(progression.join(' '), String(rightAnswer));
-    return pairQuestionAndRightAnswer;
+    return cons(progression.join(' '), String(rightAnswer));
   };
 
   game(condition, generateQuestionAndRigthAnswer);

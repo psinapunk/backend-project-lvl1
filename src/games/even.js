@@ -9,8 +9,7 @@ const evenNumber = () => {
   const generateQuestionAndRigthAnswer = () => {
     const question = Math.ceil(Math.random() * 100);
     const rightAnswer = question % 2 === 0 ? 'yes' : 'no';
-    const pairQuestionAndRightAnswer = cons(question, rightAnswer);
-    return pairQuestionAndRightAnswer;
+    return cons(question, rightAnswer);
   };
   game(condition, generateQuestionAndRigthAnswer);
 };
