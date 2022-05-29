@@ -3,7 +3,7 @@ import {
 } from '@hexlet/pairs';
 import game from '../index.js';
 
-const findGSD = () => {
+const findGCD = () => {
   const condition = 'Find the greatest common divisor of given numbers.';
 
   const generateQuestionAndRigthAnswer = () => {
@@ -31,4 +31,4 @@ const findGSD = () => {
   game(condition, generateQuestionAndRigthAnswer);
 };
 
-export default findGSD;
+export default findGCD;
